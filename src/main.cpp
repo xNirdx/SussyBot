@@ -1,13 +1,16 @@
 #include <sajf/sajf.h>
 #include <dpp/dpp.h>
 #include <vector>
-
+#include <json.hpp>
+#include <iostream>
+#include <fstream>
 #include <commands.h>
 
-// TODO: Read token from json config file
+std::ifstream config("../config.json");
+nlohmann::json config_data = nlohmann::json::parse(config);
 
 int main() {
-    sajf::bot bot(BOT_TOKEN);
+    sajf::bot bot(config_data["bot_token"]);
 
     bot.logging = true;
 
