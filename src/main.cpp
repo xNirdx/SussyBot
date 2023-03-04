@@ -5,7 +5,6 @@
 #include <commands.h>
 
 // TODO: Read token from json config file
-const std::string BOT_TOKEN = "NTU4MDQ3NDQzNTQ4MzczMDMy.GOkaAB.JrwpiiRJE3UCrSDLtAMN97LS6oMobP-gh8R_2E";
 
 int main() {
     sajf::bot bot(BOT_TOKEN);
