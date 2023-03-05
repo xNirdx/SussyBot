@@ -6,6 +6,7 @@
 // Standard library includes
 #include <string>
 #include <vector>
+#include <unordered_map>
 
 // D++ library includes
 #include <dpp/dpp.h>
@@ -22,6 +23,10 @@ namespace sajf {
 
             // Bot ID
             dpp::snowflake bot_id;
+
+            /* An unordered map which stores the song queues
+             * of all the bot's guilds by the guild ID */
+            std::unordered_map<dpp::snowflake, sajf::queue> song_queues;
 
         public:
             // Determines whether logging is enabled or not
@@ -40,6 +45,8 @@ namespace sajf {
             void register_commands(dpp::cluster &bot);
 
             void command_handler(dpp::slashcommand_t event);
+
+            void play(sajf::song song);
     };
 
 }

@@ -60,3 +60,7 @@ void sajf::bot::command_handler(dpp::slashcommand_t event) {
         }
     };
 }
+
+void sajf::bot::play(sajf::song song) {
+    bool queue_exists = (this->song_queues.count(song.guild_id) > 0);
+}
